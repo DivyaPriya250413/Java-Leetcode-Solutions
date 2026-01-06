@@ -1,20 +1,18 @@
-class PalindromeNumber {
+class Solution {
     public boolean isPalindrome(int x) {
-        if (x < 0 || (x % 10 == 0 && x != 0)) {
+        if(x<0){
             return false;
         }
+        int r=0;//reverse no
+        int o=x;//original no
 
-        int reversedNumber = 0;
-        int originalNumber = x; 
-        while (x > reversedNumber) {
-            reversedNumber = reversedNumber * 10 + x % 10;
-            x /= 10;
+        while(o!=0){
+            r=r*10 + o%10;
+            o/=10;
         }
-        return x == reversedNumber || x == reversedNumber / 10;
+        return r== x ;
+    }     
     }
-}
-
- 
 
 Example 1:
 
